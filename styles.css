@@ -64,6 +64,7 @@ body {
 .hype-text {
     margin: 30px 0 50px 0;
     z-index: 1;
+    overflow-x: hidden; /* prevents mobile overflow */
 }
 
 .born {
@@ -79,7 +80,7 @@ body {
     align-items: center;
     justify-content: center;
     gap: 15px;
-    flex-wrap: wrap;
+    flex-wrap: nowrap; /* FIX: keep icons beside text */
     margin-bottom: 40px;
 }
 
@@ -93,6 +94,7 @@ body {
     color: #ffdd88;
     letter-spacing: 2px;
     text-shadow: 0 0 12px #ff6600;
+    white-space: nowrap; /* FIX: no line break */
 }
 
 /* Buttons */
@@ -137,6 +139,7 @@ body {
     border: 3px solid #ffcc00;
     border-radius: 12px;
     display: inline-block;
+    white-space: nowrap;
 }
 
 /* ==================== SECTIONS ==================== */
@@ -206,36 +209,34 @@ footer {
         font-size: 1.1rem;
     }
 
-    /* 1. Born to Burn - Force one line */
     .born {
         font-size: 1.45rem;
         white-space: nowrap;
         margin-bottom: 18px;
     }
 
-    /* 2. Warning line - smaller text + better fit */
+    /* FIXED WARNING LINE */
     .warning-line {
-        gap: 10px;
+        gap: 8px;
         margin-bottom: 35px;
+        transform: scale(0.95); /* slight shrink for tight screens */
     }
 
     .warning-icon {
-        width: 32px;
-        height: 32px;
+        width: 30px;
+        height: 30px;
     }
 
     .warning-text {
-        font-size: 0.92rem;        /* smaller as requested */
+        font-size: 0.85rem;
         letter-spacing: 1px;
-        white-space: nowrap;
     }
 
-    /* 3. LIVE NOW - smaller to fit in one line */
+    /* FIXED LIVE NOW */
     .live-now {
-        font-size: 1.65rem;
-        padding: 16px 38px;
-        letter-spacing: 2px;
-        white-space: nowrap;
+        font-size: clamp(1.2rem, 4vw, 1.6rem);
+        padding: 14px 20px;
+        letter-spacing: 1.5px;
     }
 
     .buttons .btn {
@@ -275,12 +276,16 @@ footer {
         font-size: 1.35rem;
     }
 
+    .warning-line {
+        transform: scale(0.9); /* extra shrink if needed */
+    }
+
     .warning-text {
-        font-size: 0.88rem;
+        font-size: 0.8rem;
     }
 
     .live-now {
-        font-size: 1.5rem;
-        padding: 14px 32px;
+        font-size: 1.3rem;
+        padding: 12px 16px;
     }
 }
