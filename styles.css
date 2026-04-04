@@ -12,7 +12,7 @@ body {
     image-rendering: pixelated;
 }
 
-/* HERO */
+/* ==================== HERO - DESKTOP ==================== */
 .hero {
     min-height: 100vh;
     display: flex;
@@ -24,15 +24,11 @@ body {
     position: relative;
 }
 
-/* Subtle fire glow overlay */
 .hero::before {
     content: '';
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    pointer-events: none;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: radial-gradient(circle at center, rgba(255, 102, 0, 0.15), transparent 70%);
     z-index: 0;
 }
 
@@ -90,7 +86,6 @@ body {
 .warning-icon {
     width: 45px;
     height: 45px;
-    image-rendering: pixelated;
 }
 
 .warning-text {
@@ -125,31 +120,17 @@ body {
     box-shadow: 0 0 30px #ffcc00;
 }
 
-.btn.primary:hover {
-    transform: scale(1.05);
-}
-
 .btn.secondary {
     background: transparent;
     color: white;
     border: 3px solid #ffcc00;
 }
 
-.btn.secondary:hover {
-    background: #ffcc00;
-    color: #000;
-}
-
-/* COUNTDOWN - LIVE NOW */
-.countdown {
-    margin-top: 20px;
-    z-index: 1;
-}
-
+/* LIVE NOW */
 .live-now {
     font-size: 2.3rem;
     color: #ffcc00;
-    text-shadow: 0 0 30px #ff6600, 0 0 50px #ff6600;
+    text-shadow: 0 0 30px #ff6600;
     letter-spacing: 4px;
     background: rgba(255,255,255,0.08);
     padding: 22px 60px;
@@ -158,7 +139,7 @@ body {
     display: inline-block;
 }
 
-/* SECTIONS */
+/* ==================== SECTIONS ==================== */
 .section {
     padding: 80px 20px;
     background: #0a1f4a;
@@ -180,7 +161,12 @@ body {
     margin: 0 auto;
 }
 
-/* HOW TO BUY - Fixed inside box */
+.box p, .box li {
+    color: #ddd;
+    margin-bottom: 15px;
+}
+
+/* How to Buy */
 .how-to-buy-list {
     padding-left: 25px;
     line-height: 1.9;
@@ -189,23 +175,10 @@ body {
 
 .how-to-buy-list li {
     margin-bottom: 14px;
-    color: #ddd;
 }
 
 .how-to-buy-list li::marker {
     color: #ffcc00;
-}
-
-/* General box text */
-.box p, .box li {
-    color: #ddd;
-    margin-bottom: 15px;
-}
-
-/* COMMUNITY buttons inside box */
-.box .buttons {
-    margin-top: 20px;
-    margin-bottom: 0;
 }
 
 /* Footer */
@@ -214,28 +187,80 @@ footer {
     padding: 60px 20px;
     color: #888;
     background: #0a1f4a;
-    font-size: 0.85rem;
 }
 
-/* Mobile Responsiveness */
+/* ==================== MOBILE OPTIMIZATION ==================== */
 @media (max-width: 768px) {
+    .hero {
+        padding: 30px 15px;
+    }
+
     .logo {
-        width: 220px;
+        width: 210px;
     }
+
     .title {
-        font-size: 2.4rem;
+        font-size: 2.35rem;
     }
+
+    .subtitle {
+        font-size: 1.1rem;
+    }
+
     .born {
-        font-size: 1.6rem;
+        font-size: 1.55rem;
     }
+
     .warning-text {
         font-size: 1rem;
     }
-    .live-now {
-        font-size: 1.8rem;
-        padding: 18px 40px;
+
+    .warning-icon {
+        width: 35px;
+        height: 35px;
     }
+
+    .live-now {
+        font-size: 1.75rem;
+        padding: 18px 40px;
+        letter-spacing: 2.5px;
+    }
+
+    .buttons .btn {
+        padding: 15px 26px;
+        font-size: 0.9rem;
+    }
+
+    .section {
+        padding: 65px 15px;
+    }
+
+    .section h2 {
+        font-size: 1.55rem;
+    }
+
     .box {
-        padding: 35px 25px;
+        padding: 32px 22px;
+    }
+
+    .how-to-buy-list {
+        font-size: 0.95rem;
+        padding-left: 20px;
+    }
+}
+
+/* Sehr kleine Handys */
+@media (max-width: 480px) {
+    .logo {
+        width: 190px;
+    }
+
+    .title {
+        font-size: 2.1rem;
+    }
+
+    .live-now {
+        font-size: 1.6rem;
+        padding: 16px 35px;
     }
 }
