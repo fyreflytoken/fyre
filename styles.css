@@ -41,9 +41,9 @@ body {
 .logo {
     width: 280px;
     height: auto;
-    image-rendering: pixelated;
 }
 
+/* Desktop Text */
 .title {
     font-size: 3.2rem;
     color: #ffcc00;
@@ -166,7 +166,6 @@ body {
     margin-bottom: 15px;
 }
 
-/* How to Buy */
 .how-to-buy-list {
     padding-left: 25px;
     line-height: 1.9;
@@ -207,23 +206,36 @@ footer {
         font-size: 1.1rem;
     }
 
+    /* 1. Born to Burn - Force one line */
     .born {
-        font-size: 1.55rem;
+        font-size: 1.45rem;
+        white-space: nowrap;
+        margin-bottom: 18px;
     }
 
-    .warning-text {
-        font-size: 1rem;
+    /* 2. Warning line - smaller text + better fit */
+    .warning-line {
+        gap: 10px;
+        margin-bottom: 35px;
     }
 
     .warning-icon {
-        width: 35px;
-        height: 35px;
+        width: 32px;
+        height: 32px;
     }
 
+    .warning-text {
+        font-size: 0.92rem;        /* smaller as requested */
+        letter-spacing: 1px;
+        white-space: nowrap;
+    }
+
+    /* 3. LIVE NOW - smaller to fit in one line */
     .live-now {
-        font-size: 1.75rem;
-        padding: 18px 40px;
-        letter-spacing: 2.5px;
+        font-size: 1.65rem;
+        padding: 16px 38px;
+        letter-spacing: 2px;
+        white-space: nowrap;
     }
 
     .buttons .btn {
@@ -249,7 +261,7 @@ footer {
     }
 }
 
-/* Sehr kleine Handys */
+/* Very small phones */
 @media (max-width: 480px) {
     .logo {
         width: 190px;
@@ -259,8 +271,16 @@ footer {
         font-size: 2.1rem;
     }
 
+    .born {
+        font-size: 1.35rem;
+    }
+
+    .warning-text {
+        font-size: 0.88rem;
+    }
+
     .live-now {
-        font-size: 1.6rem;
-        padding: 16px 35px;
+        font-size: 1.5rem;
+        padding: 14px 32px;
     }
 }
